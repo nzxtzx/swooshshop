@@ -41,31 +41,11 @@ const SidebarMenu = ({ isOpen, onClose, onLink }) => {
             </>
           )}
         </div>
-        <div className="sidebar-menu__catalog">
+        <NavLink to="/catalog" className="sidebar-menu__catalog" onClick={onLink}>
           <button className={`catalog-button ${catalogIsOpen ? "active" : ""}`} onClick={() => setCatalogIsOpen((prevState) => !prevState)}>
             Catalog
           </button>
-          {catalogIsOpen && (
-            <ul className="catalog-list">
-              <li className="catalog-item">
-                <span>Demiseason</span>
-              </li>
-              <li className="catalog-item">
-                <span>Summer</span>
-              </li>
-              <li className="catalog-item">
-                <span>Winter</span>
-              </li>
-              <li className="catalog-item">
-                <span>Models</span>
-              </li>
-            </ul>
-          )}
-          <button className="catalog-button">Male</button>
-          <button className="catalog-button">Female</button>
-          <button className="catalog-button">Childs</button>
-          <button className="catalog-button">Sallery</button>
-        </div>
+        </NavLink>
         <nav className="sidebar-menu__navigation">
           <NavLink to="/about" className="navigation-link">
             About us
