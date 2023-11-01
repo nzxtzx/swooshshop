@@ -8,7 +8,7 @@ import SizesTablePopupManager from "./SizesTablePopupManager";
 import ReviewPopup from "./ReviewPopup";
 import ReviewPopupManager from "./ReviewPopupManager";
 import { selectIsAuth } from "../../redux/slices/auth.slice";
-import ProductReview from "./productReview";
+import ProductReview from "./ProductReview";
 
 const FullProduct = () => {
   const isAuth = useSelector(selectIsAuth);

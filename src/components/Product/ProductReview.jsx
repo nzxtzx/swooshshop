@@ -4,12 +4,12 @@ const ProductReview = ({ reviews }) => {
   const reviewsArray = Array.isArray(reviews) ? reviews : [reviews];
 
   const formatDate = (dateString) => {
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const options = { day: "numeric", month: "long", year: "numeric" };
     const date = new Date(dateString);
-    const day = date.toLocaleDateString('en-US', { day: 'numeric' });
-    const month = date.toLocaleDateString('en-US', { month: 'long' });
-    const year = date.toLocaleDateString('en-US', { year: 'numeric' });
-  
+    const day = date.toLocaleDateString("en-US", { day: "numeric" });
+    const month = date.toLocaleDateString("en-US", { month: "long" });
+    const year = date.toLocaleDateString("en-US", { year: "numeric" });
+
     return `${day} ${month} ${year}`;
   };
 
