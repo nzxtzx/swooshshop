@@ -27,9 +27,9 @@ const Product = ({ name, image, gender, price, oldPrice, options, id }) => {
           <div className="product-card__colors">
             <p>
               Colors:
-              {Object.entries(options.colors).map(([colorName, hexValue]) => (
-                <span key={colorName} style={{ backgroundColor: hexValue }}></span>
-              ))}
+              {Object.entries(options.colors).slice(0, 3).map(([colorName, hexValue]) => (
+        <span key={colorName} style={{ backgroundColor: hexValue }}></span>
+      ))}
             </p>
           </div>
         )}

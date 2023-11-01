@@ -72,12 +72,15 @@
       }
 
       .filter-select {
-        color: #b5b5b5;
         font-size: 0.9375rem;
         font-weight: 400;
         line-height: 0.625rem;
         padding: 0;
         text-transform: uppercase;
+
+        option{
+          color: #b5b5b5;
+        }
       }
 
       .catalog-filters__price {

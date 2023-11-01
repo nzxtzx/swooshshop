@@ -315,6 +315,17 @@
   }
 }
 
+@media (max-width: 424px) {
+  .catalog .catalog-container{
+    padding: 0;
+  }
+
+  .catalog .catalog-products .catalog-products__list{
+    gap: 3.125rem 1rem;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 320px){
   .catalog{
     .catalog__pagination{

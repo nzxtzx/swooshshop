@@ -18,8 +18,10 @@ const RecentAdditionPagination = () => {
       const width = window.innerWidth;
 
       if (width <= 375) {
-        setPageSize(3);
+        setPageSize(4);
       } else if (width <= 425) {
+        setPageSize(4);
+      } else if (width <= 767) {
         setPageSize(4);
       } else if (width <= 768) {
         setPageSize(3);
