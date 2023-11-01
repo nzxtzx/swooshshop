@@ -65,6 +65,7 @@
         border: none;
         height: 100%;
         cursor: pointer;
+        background: transparent;
       }
 
       .filter-select:focus {
@@ -190,7 +191,7 @@
         }
 
         .catalog-filters__gender {
-          border-bottom: none;
+          border-bottom: 1px solid #dfdfdf
         }
       }
     }
