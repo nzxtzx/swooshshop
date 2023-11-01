@@ -221,6 +221,12 @@
   }
 }
 
+@media (max-width: 450px) {
+  .home .home-products__list-top{
+    padding: 0 1.5rem;
+  }
+}
+
 @media (max-width: 425px) {
   .home .home-products__list-top {
     padding: 0 1.7rem;

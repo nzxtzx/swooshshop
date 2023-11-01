@@ -16,7 +16,7 @@ const RecentAdditionPagination = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-
+  
       if (width <= 375) {
         setPageSize(4);
       } else if (width <= 425) {
@@ -29,11 +29,11 @@ const RecentAdditionPagination = () => {
         setPageSize(4);
       }
     };
-
+  
     window.addEventListener("resize", handleResize);
-
-    handleResize();
-
+  
+    setTimeout(handleResize, 100);
+  
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
