@@ -1,0 +1,28 @@
+.product-rating {
+    display: inline-block;
+  }
+  
+  .product-rating  input {
+    display: none;
+  }
+  
+  .product-rating  label {
+    font-size: 2em;
+    padding: 0.2em;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .product-rating label:hover,
+  .product-rating label:hover ~ label,
+  .product-rating  input:checked ~ label {
+    color: transparent; 
+  }
+  
+  .product-rating  label svg {
+    fill: #D3D3D3;
+  }
+  
+  .product-rating  input:checked ~ label svg {
+    fill: #454A4C; 
+  }

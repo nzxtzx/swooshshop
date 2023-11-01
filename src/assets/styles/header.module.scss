@@ -1,0 +1,221 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: sticky;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .header-top {
+    display: flex;
+    height: 2.8125rem;
+
+    .header-top__container {
+      width: 100%;
+      max-width: 85rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navigation {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .navigation-link {
+      color: #585858;
+      font-family: Pragmatica;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 0.6875rem;
+      text-decoration: none;
+      transition: 0.3s ease-in;
+      text-transform: uppercase;
+    }
+
+    .navigation-link:hover {
+      color: #242424;
+      transition: 0.3s ease-in;
+    }
+
+    .auth {
+      display: flex;
+      align-items: center;
+      color: #585858;
+      font-family: Pragmatica;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 0.6875rem;
+      text-decoration: none;
+      transition: 0.3s ease-in;
+      cursor: pointer;
+    }
+
+    .auth svg {
+      margin-right: 0.44rem;
+    }
+  }
+
+  .header-bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    height: 4.37056rem;
+  }
+
+  .header-bottom__container {
+    width: 100%;
+    max-width: 85rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      padding-right: 1.88rem;
+      height: 100%;
+      border-right: 1px solid #eaeaea;
+      cursor: pointer;
+    }
+
+    .header-navigation {
+      display: flex;
+      align-items: center;
+      gap: 3.56rem;
+
+      .header-navigation_link {
+        color: #000;
+        font-family: Pragmatica;
+        font-size: 0.9375rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 0.6875rem;
+        text-decoration: none;
+        transition: 0.3s;
+        text-transform: uppercase;
+      }
+
+      .header-navigation_link:hover {
+        color: #ff6915;
+        transition: 0.3s;
+      }
+    }
+
+    .header-tools {
+      display: flex;
+      height: 100%;
+
+      .profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.375rem;
+        border-left: 1px solid #eaeaea;
+        cursor: pointer;
+      }
+
+      .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.375rem;
+        border-left: 1px solid #eaeaea;
+        cursor: pointer;
+      }
+
+      .favorites {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.375rem;
+        border-left: 1px solid #eaeaea;
+        cursor: pointer;
+      }
+
+      .cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.375rem;
+        border-right: 1px solid #eaeaea;
+        border-left: 1px solid #eaeaea;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .cart svg path {
+        transition: 0.3s;
+      }
+
+      .cart:hover {
+        background-color: #000;
+        transition: 0.3s;
+      }
+
+      .cart:hover svg path {
+        stroke: #fff;
+        transition: 0.3s;
+      }
+
+      .favorites svg path {
+        transition: 0.3s;
+      }
+
+      .favorites:hover {
+        background-color: #000;
+        transition: 0.3s;
+      }
+
+      .favorites:hover svg path {
+        stroke: #fff;
+        transition: 0.3s;
+      }
+
+      .search svg path {
+        transition: 0.3s;
+      }
+
+      .search:hover {
+        background-color: #000;
+        transition: 0.3s;
+      }
+
+      .search:hover svg path {
+        stroke: #fff;
+        transition: 0.3s;
+      }
+
+      .profile svg path {
+        transition: 0.3s;
+      }
+
+      .profile:hover {
+        background-color: #000;
+        transition: 0.3s;
+      }
+
+      .profile:hover svg path {
+        stroke: #fff;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+
+/* respons */ 
+
+@media (max-width: 1300px) {
+  .header{
+    display: none;
+  }
+
+}

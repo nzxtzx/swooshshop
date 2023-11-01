@@ -1,0 +1,117 @@
+.product-skeleton {
+  display: flex;
+  flex-direction: column;
+  width: 27.5rem;
+  height: 36.625rem;
+}
+
+.skeleton-image,
+.skeleton-name {
+  border-radius: 5px;
+  animation: loadingAnimation 1.5s infinite ease-in-out;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 27.8125rem;
+  background-color: #f6f6f6;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-gender {
+  height: 1rem;
+  width: 25%;
+  background-color: #f6f6f6;
+  margin-bottom: 0.5rem;
+  animation: loadingAnimationSecond 1s infinite ease-in-out;
+}
+
+.skeleton-name {
+  height: 1.625rem;
+  width: 100%;
+  background-color: #f6f6f6;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-colors {
+  height: 1.625rem;
+  width: 100%;
+  background-color: #f6f6f6;
+  margin-bottom: 0.5rem;
+  animation: loadingAnimationSecond 1.5s infinite ease-in-out;
+}
+
+.skeleton-price {
+  height: 1.625rem;
+  width: 30%;
+  background-color: #f6f6f6;
+  animation: loadingAnimationSecond 1.5s infinite ease-in-out;
+}
+
+@keyframes loadingAnimation {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes loadingAnimationSecond {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-skeleton {
+    width: 14.125rem;
+    height: 19rem;
+  }
+
+  .skeleton-image {
+    width: 100%;
+    height: 10rem;
+  }
+
+  .skeleton-gender {
+    height: 0.5rem;
+    width: 25%;
+    background-color: #f6f6f6;
+    margin-bottom: 0.5rem;
+    animation: loadingAnimationSecond 1s infinite ease-in-out;
+  }
+  
+  .skeleton-name {
+    height: 1.375rem;
+    width: 100%;
+    background-color: #f6f6f6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skeleton-colors {
+    height: 1.625rem;
+    width: 100%;
+    background-color: #f6f6f6;
+    margin-bottom: 0.5rem;
+    animation: loadingAnimationSecond 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-price {
+    height: 2rem;
+    width: 30%;
+    background-color: #f6f6f6;
+    animation: loadingAnimationSecond 1.5s infinite ease-in-out;
+  }
+}

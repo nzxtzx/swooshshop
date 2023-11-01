@@ -1,0 +1,56 @@
+.button {
+    margin-top: 1rem;
+    width: 25.625rem;
+    height: 4.0625rem;
+    border: none;
+    background: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .button::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4.0625rem;
+    background-color: #000000;
+    top: 0;
+    right: 0;
+    position: absolute;
+    transition: 0.3s;
+  }
+
+  .button::before {
+    content: "";
+    display: block;
+    background-image: url("../../../assets/images/arrow-icon.svg");
+    width: 0.875rem;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    right: 1.6rem;
+    z-index: 10;
+  }
+
+  .button:hover {
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .button:hover::after {
+    background-color: #1e1e1e;
+    transition: 0.3s;
+  }
+
+  .button{
+    span{
+        margin-right: 3rem;
+    }
+  }

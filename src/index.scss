@@ -1,0 +1,60 @@
+@font-face {
+  font-family: Pragmatica;
+  src: url('../fonts/Pragmatica_Book.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Pragmatica;
+  src: url('../fonts/Pragmatica_Medium.woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Pragmatica;
+  src: url('../fonts/Pragmatica_Bold.woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Pragmatica;
+  src: url('../fonts/Pragmatica_Extra-Bold-Oblique.woff2');
+  font-weight: 800;
+}
+
+@import url('./App.scss');
+
+input{
+  background: transparent;
+  border: none;
+}
+
+p{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+:root {
+  display: flex;
+  flex-direction: column;
+  font-family: Pragmatica;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgb(0, 0, 0);
+  background-color: #FFFFFF;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+option{
+  padding: 0;
+  min-height: unset;
+}
