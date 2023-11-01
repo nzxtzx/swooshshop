@@ -42,6 +42,36 @@
         gap: 0.6875rem;
         border-right: 1px solid #dfdfdf;
         position: relative;
+
+        label {
+          color: #000;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 0.625rem;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+  
+        .filter-select:focus {
+          outline: none;
+        }
+  
+        .filter-select {
+          border: none;
+          height: 100%;
+          cursor: pointer;
+          font-size: 0.9375rem;
+          font-weight: 400;
+          line-height: 0.625rem;
+          padding: 0;
+          text-transform: uppercase;
+          color: #b5b5b5;
+          background-color: #fff;
+  
+          option{
+            color: #b5b5b5;
+          }
+        }
       }
 
       .catalog-filters__sort {
@@ -50,36 +80,6 @@
 
       .catalog-filters__size {
         border-left: 1px solid #dfdfdf;
-      }
-
-      label {
-        color: #000;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 0.625rem;
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
-      .filter-select:focus {
-        outline: none;
-      }
-
-      .filter-select {
-        border: none;
-        height: 100%;
-        cursor: pointer;
-        background: transparent;
-        font-size: 0.9375rem;
-        font-weight: 400;
-        line-height: 0.625rem;
-        padding: 0;
-        text-transform: uppercase;
-        color: #b5b5b5;
-
-        option{
-          color: #b5b5b5;
-        }
       }
 
       .catalog-filters__price {
