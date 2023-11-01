@@ -1,5 +1,6 @@
 {
   "name": "swoosh-shop-frontend",
+  "homepage": "https://swoosh-shop.onrender.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
