@@ -154,6 +154,7 @@
         background: #fff;
         cursor: pointer;
         transition: 0.3s;
+        color: #000;
       }
 
       .catalog__pagination-buttons{
@@ -295,7 +296,6 @@
         .catalog-pagination__button {
           min-width: 50px;
           min-height: 40px;
-          color: #000;
         }
 
         .catalog__pagination-buttons{
