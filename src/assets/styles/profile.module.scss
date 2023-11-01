@@ -239,6 +239,8 @@
             }
 
             .profile-adress__content {
+              margin: 1rem 0rem 2rem 1.88rem;
+
               .address-value {
                 max-width: 20rem;
                 color: #3b3b3e;
@@ -302,8 +304,6 @@
                   transition: 0.3s;
                 }
               }
-
-              margin: 1rem 0rem 2rem 1.88rem;
 
               a {
                 text-decoration: none;
@@ -495,6 +495,14 @@
 }
 
 @media (max-width: 425px) {
+
+  .profile .profile-container .profile-content .profile-info .profile-adress .profile-adress__container .profile-adress__content {
+    margin: 1rem 0rem 2rem 1.5rem;
+  }
+
+  .profile .profile-container .profile-content .profile-info .profile-adress .profile-adress__container .profile-adress__header span{
+    margin-left: 1.5rem;
+  }
 
   .adress-edit {
     button {
