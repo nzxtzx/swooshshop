@@ -20,9 +20,6 @@ const FullProduct = () => {
   const [isReviewOpen, setReviewOpen] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  console.log(singleProduct);
-  console.log(singleProduct.reviews.reviews);
-
   const handleToggleTablePopup = () => {
     setSizesTableOpen((prevIsOpen) => !prevIsOpen);
   };

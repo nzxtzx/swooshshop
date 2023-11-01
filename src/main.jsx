@@ -26,9 +26,8 @@ import MyAdress from "./screens/Profile/MyAdress.jsx";
 import ChangePassword from "./screens/Profile/ChangePassword.jsx";
 import EditProfile from "./screens/Profile/EditProfile.jsx";
 import EditAddress from "./screens/Profile/EditAddress.jsx";
-import FullProduct from "./components/Product/fullProduct.jsx";
+import FullProduct from "./components/Product/FullProduct.jsx";
 import Catalog from "./screens/Catalog/Catalog.jsx";
-import disableDevtool from "disable-devtool";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
