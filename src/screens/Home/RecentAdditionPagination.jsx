@@ -32,7 +32,7 @@ const RecentAdditionPagination = () => {
   
     window.addEventListener("resize", handleResize);
   
-    setTimeout(handleResize, 100);
+    setTimeout(handleResize, 500);
   
     return () => window.removeEventListener("resize", handleResize);
   }, []);
