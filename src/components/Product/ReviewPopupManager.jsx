@@ -8,7 +8,7 @@ const ReviewPopupManager = ({ children, isOpen }) => {
       document.body.style.overflow = "hidden";
       document.body.style.marginRight = `${scrollbarWidth}px`;
     } else {
-      document.body.style.overflow = "visible";
+      document.body.style.overflow = "hidden";
       document.body.style.marginRight = "0";
     }
     

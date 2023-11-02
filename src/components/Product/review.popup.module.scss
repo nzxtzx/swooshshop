@@ -18,15 +18,16 @@
   background: white;
   padding: 2.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
+  position: absolute;
   width: 44rem;
 
   h2 {
     color: #2c2f30;
     font-size: 2.1875rem;
     font-weight: 500;
-    line-height: 1.25rem;
+    line-height: normal;
     text-transform: uppercase;
+    margin: 0;
   }
 
   .product-review__popup-button {
@@ -42,6 +43,7 @@
   .product-review__popup-form {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     .review__popup-form-text {
       color: #000;
@@ -53,20 +55,26 @@
     }
 
     .review__popup-form-label {
-      border: 1px solid #d6d6d6;
       height: 6.3125rem;
-      padding: 0.9375rem 1.25rem;
+      width: calc(100% - 2.5rem);
       cursor: text;
-      width: 41rem;
     }
 
     .review__popup-form-input {
+      height: 100%;
       width: 100%;
-      white-space: wrap;
       color: #000;
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.6875rem;
+      border: 1px solid #d6d6d6;
+      resize: none;
+      padding: 1rem 1.25rem;
+      margin-bottom: 5rem;
+    }
+
+    .review__popup-form-input:focus{
+      outline: none;
     }
 
     .review__popup-form-input::placeholder {
@@ -88,6 +96,7 @@
   }
 
   .rewiew__popup-form-button .button {
+    margin-top: 3.5rem;
     width: 17.625rem;
   }
 
@@ -100,12 +109,12 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: #FFF;
+    background: #fff;
     opacity: 0;
     pointer-events: none;
   }
-  
-  .review__popup-success.visible{
+
+  .review__popup-success.visible {
     opacity: 1;
     transition: 0.3s;
     display: flex;
@@ -116,7 +125,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: #FFF;
+    background: #fff;
     pointer-events: none;
 
     .review__popup-success-content {
@@ -129,14 +138,87 @@
       }
 
       p {
+        max-width: 20rem;
         margin-top: 1.5rem;
         color: #545454;
         font-size: 1.0625rem;
         font-weight: 400;
-        line-height: 0.625rem;
+        line-height: normal;
         text-transform: uppercase;
+        text-align: center;
       }
     }
   }
+}
 
+@media (max-width: 900px) {
+  .product-reviews__popup-content{
+    width: 35rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-reviews__popup-content{
+    width: 35rem;
+
+    h2{
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .product-reviews__popup-content{
+    width: 30rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-reviews__popup-content{
+    width: 25rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .product-reviews__popup-content{
+    width: 20rem;
+    top: 15%;
+  }
+}
+
+@media (max-width: 375px) {
+  .product-reviews__popup-content{
+    max-width: 18rem;
+    top: 15%;
+    padding: 1.5rem;
+
+    .rewiew__popup-form-button{
+
+      .button{
+        width: 12rem;
+        height: 3rem;
+
+        span{
+          margin-right: 3rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      .button::after{
+        height: 100%;
+        width: 3rem;
+      }
+
+      .button::before{
+        right: 1rem;
+      }
+    }
+    
+  }
+}
+
+@media (max-width: 374px) {
+  .product-reviews__popup-content{
+    max-width: 12rem;
+  }
 }

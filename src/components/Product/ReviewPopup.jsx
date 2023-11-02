@@ -74,8 +74,7 @@ const ReviewPopup = ({ isPopupOpen, onClosePopup }) => {
               {errorMessage && <p className="popup-message">{errorMessage}</p>}
               <p className="review__popup-form-text">Enter review text</p>
               <label className={`review__popup-form-label ${errors.text ? "error-label" : ""}`}>
-                <input
-                  type="text"
+                <textarea
                   placeholder="text"
                   className={`review__popup-form-input ${errors.text ? "error-label" : ""}`}
                   {...register("text", {
@@ -93,7 +92,7 @@ const ReviewPopup = ({ isPopupOpen, onClosePopup }) => {
                   <circle cx="38" cy="37.5" r="37.5" fill="#F6F6F6" />
                   <path d="M24.5 38L33.5 47L51.5 29" stroke="#FF6915" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
                 </svg>
-                <h2>Review sent</h2>
+                <h2 className="review__popup-success-title">Review sent</h2>
                 <p>Thank you, your review has been successfully published.</p>
               </div>
             </div>
