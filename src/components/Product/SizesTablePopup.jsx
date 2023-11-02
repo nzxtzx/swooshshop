@@ -19,7 +19,7 @@ const SizesTablePopup = ({ isOpen, onClose }) => {
             <table className="product-sizes__table">
               <tbody>
                 <tr className="table-row">
-                  <td className="table-row__item first-item">Leg length, cm</td>
+                  <td className="table-row__item first-item">length, cm</td>
                   <td className="table-row__item">22,5</td>
                   <td  className="table-row__item">23,5</td>
                   <td  className="table-row__item">24,5</td>

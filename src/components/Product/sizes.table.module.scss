@@ -18,6 +18,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   max-width: 54rem;
+  top: 15%;
+  bottom: 10%;
+  overflow: scroll;
 
   h2 {
     color: #2c2f30;
@@ -66,6 +69,7 @@
         font-style: normal;
         font-weight: 500;
         line-height: 1.5625rem;
+        text-transform: uppercase;
       }
 
       .table-row__item:last-child {
