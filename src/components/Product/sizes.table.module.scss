@@ -16,7 +16,7 @@
   background: white;
   padding: 2.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
+  position: absolute;
   max-width: 54rem;
 
   h2 {
@@ -190,6 +190,9 @@
 @media (max-width: 425px) {
   .product-sizes__table-content {
     max-width: 16.6rem;
+    top: 15%;
+    bottom: 10%;
+    overflow: scroll;
 
     p{
       font-size: 0.8500rem;
