@@ -15,46 +15,64 @@ const SizesTablePopup = ({ isOpen, onClose }) => {
                 <path d="M0.5 11L10.5 1M10.501 11L0.501007 1" stroke="#454A4C" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </button>
+            <h2>Size matching chart</h2>
             <table className="product-sizes__table">
-              <h3>Size matching table</h3>
-              <thead>
-                <tr className="table-row__first">
-                  <th className="row__first-first first-item">Leg length, cm</th>
-                  <div className="row__first-list">
-                    {[...Array(11)].map((_, index) => (
-                      <th className="list-item" key={index}>{22.5 + index}</th>
-                    ))}
-                  </div>
-                </tr>
-              </thead>
               <tbody>
-                <tr className="table-row__second">
-                  <td className="row__second-first first-item">EU</td>
-                  <div className="row__second-list">
-                    {[...Array(11)].map((_, index) => (
-                      <td className="list-item" key={index}>{36 + index}</td>
-                    ))}
-                  </div>
+                <tr className="table-row">
+                  <td className="table-row__item first-item">Leg length, cm</td>
+                  <td className="table-row__item">22,5</td>
+                  <td  className="table-row__item">23,5</td>
+                  <td  className="table-row__item">24,5</td>
+                  <td  className="table-row__item">25</td>
+                  <td  className="table-row__item">25,5</td>
+                  <td  className="table-row__item">26</td>
+                  <td  className="table-row__item">26,5</td>
+                  <td  className="table-row__item">27,5</td>
+                  <td  className="table-row__item">28</td>
+                  <td  className="table-row__item">29</td>
+                  <td  className="table-row__item">29,5</td>
                 </tr>
-              </tbody>
-              <tbody>
-                <tr className="table-row__third">
-                  <td className="row__third-first first-item">RUS</td>
-                  <div className="row__third-list">
-                    {[...Array(11)].map((_, index) => (
-                      <td className="list-item" key={index}>{35 + index}</td>
-                    ))}
-                  </div>
+                <tr className="table-row">
+                  <td className="table-row__item first-item">EU</td>
+                  <td className="table-row__item">36</td>
+                  <td  className="table-row__item">37</td>
+                  <td  className="table-row__item">38</td>
+                  <td  className="table-row__item">39</td>
+                  <td  className="table-row__item">40</td>
+                  <td  className="table-row__item">41</td>
+                  <td  className="table-row__item">42</td>
+                  <td  className="table-row__item">43</td>
+                  <td  className="table-row__item">44</td>
+                  <td  className="table-row__item">45</td>
+                  <td  className="table-row__item">46</td>
                 </tr>
-              </tbody>
-              <tbody>
-                <tr className="table-row__fourth">
-                  <td className="row__fourth-first first-item">US</td>
-                  <div className="row__fourth-list">
-                    {[...Array(11)].map((_, index) => (
-                      <td className="list-item" key={index}>{5.5 + index * 0.5}</td>
-                    ))}
-                  </div>
+                <tr className="table-row">
+                  <td className="table-row__item first-item">RUS</td>
+                  <td className="table-row__item">35</td>
+                  <td  className="table-row__item">36</td>
+                  <td  className="table-row__item">37</td>
+                  <td  className="table-row__item">38</td>
+                  <td  className="table-row__item">39</td>
+                  <td  className="table-row__item">40</td>
+                  <td  className="table-row__item">41</td>
+                  <td  className="table-row__item">42</td>
+                  <td  className="table-row__item">43</td>
+                  <td  className="table-row__item">44</td>
+                  <td  className="table-row__item">45</td>
+                </tr>
+                <tr className="table-row">
+                  <td className="table-row__item first-item">US</td>
+                  <td className="table-row__item">5,5</td>
+                  <td  className="table-row__item">6</td>
+                  <td  className="table-row__item">6,5</td>
+                  <td  className="table-row__item">7,5</td>
+                  <td  className="table-row__item">8</td>
+                  <td  className="table-row__item">8,5</td>
+                  <td  className="table-row__item">9</td>
+                  <td  className="table-row__item">10</td>
+                  <td  className="table-row__item">10,5</td>
+                  <td  className="table-row__item">11,5</td>
+                  <td  className="table-row__item">12</td>
                 </tr>
               </tbody>
             </table>
