@@ -42,6 +42,9 @@ const ReviewPopup = ({ isPopupOpen, onClosePopup }) => {
         setErrorMessage("");
         setIsSuccess(true);
         dispatch(fetchProductReviews({ id: productId, userId: userData._id, params: values }));
+        setTimeout(() => {
+          onClosePopup();
+        }, 2000);
       }
     } catch (err) {
       console.error(err);
