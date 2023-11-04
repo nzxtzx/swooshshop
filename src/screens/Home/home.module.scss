@@ -164,7 +164,7 @@
 
   .product-card{
     width: 20rem;
-    height: 27rem;
+    height: 24rem;
 
     .product-card__top{
       height: 15rem;
@@ -181,6 +181,7 @@
 @media (max-width: 700px) {
   .product-card{
     width: 18rem;
+    height: 24rem;
   }
 }
 
@@ -190,6 +191,7 @@
   }
   .product-card{
     width: 16rem;
+    height: 25rem;
   }
 }
 
@@ -199,6 +201,7 @@
   }
   .product-card{
     width: 14rem;
+    height: 25rem;
   }
 }
 
@@ -208,6 +211,7 @@
   }
   .product-card{
     width: 12rem;
+    height: 23rem;
 
     .product-card__top{
       height: 13rem;
@@ -271,7 +275,6 @@
 
   .product-card{
     width: 10rem;
-    height: 20rem;
 
     .product-card__top{
       .product-card__swiper .swiper-pagination{
