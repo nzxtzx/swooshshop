@@ -86,10 +86,16 @@ const Cart = () => {
                       <td>
                         <div className="cart-product__quantity">
                           <button onClick={() => dispatch(decrementQuantity(product))} disabled={product.quantity <= 1}>
-                            -
+                            <svg xmlns="http://www.w3.org/2000/svg" width="5" height="2" viewBox="0 0 5 2" fill="none">
+                              <path d="M0.550781 1.533V0.466995H4.45078V1.533H0.550781Z" fill="#A7A7A7" />
+                            </svg>
                           </button>
                           <p>{product.quantity}</p>
-                          <button onClick={() => dispatch(addToCart(product))}>+</button>
+                          <button onClick={() => dispatch(addToCart(product))}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="6" viewBox="0 0 7 6" fill="none">
+                              <path d="M2.92722 5.925V3.533H0.574219V2.467H2.92722V0.0749969H4.07122V2.467H6.42422V3.533H4.07122V5.925H2.92722Z" fill="#A7A7A7" />
+                            </svg>
+                          </button>
                         </div>
                       </td>
                       <td>

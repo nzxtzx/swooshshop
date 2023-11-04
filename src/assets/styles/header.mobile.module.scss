@@ -142,6 +142,34 @@
     border-left: 1px solid #eaeaea;
     cursor: pointer;
     transition: 0.3s;
+    
+    .cart-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      text-align: center;
+      top: 18px;
+      right: 15px;
+      width: 1.00075rem;
+      height: 1.00075rem;
+      background-color: #ff6915;
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .cart-counter.visible {
+      opacity: 1;
+      transition: 0.3s;
+    }
+
+    p {
+      color: #fff;
+      font-size: 0.5625rem;
+      font-weight: 700;
+      line-height: normal;
+    }
   }
 
   .cart svg path {
