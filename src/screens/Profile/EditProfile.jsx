@@ -5,7 +5,6 @@ import { fetchEditMe } from "../../redux/slices/auth.slice";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../../components/ui/Buttons/Button";
-import { useState } from "react";
 
 const EditProfile = () => {
   const dispatch = useDispatch();

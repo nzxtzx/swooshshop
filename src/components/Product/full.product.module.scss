@@ -86,7 +86,7 @@
           gap: 1rem;
 
           .product-content__image {
-            flex-basis: calc(50% - 0.5rem);;
+            flex-basis: calc(50% - 0.5rem);
             height: 50%;
             position: relative;
 
@@ -136,10 +136,12 @@
 
           span {
             margin-left: 0.62rem;
-            display: block;
+            display: border-box;
             width: 0.9375rem;
             height: 0.9375rem;
             border-radius: 50%;
+            border: 4px solid #fff;
+            cursor: pointer;
           }
         }
 
@@ -197,6 +199,12 @@
               color: #fff;
               transition: 0.3s;
             }
+
+            button.active {
+              background-color: #1e1e1e;
+              color: #fff;
+              transition: 0.3s;
+            }
           }
         }
 
@@ -223,12 +231,67 @@
           }
         }
 
+        .product-content__button {
+          margin-top: 2.5rem;
+          display: flex;
+          height: 4.0625rem;
+          cursor: pointer;
+          border: none;
+          padding: 0;
+          background: #fff;
+          max-width: 19.1875rem;
+
+          span:nth-child(1) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1e1e1e;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            width: 15.125rem;
+            height: 100%;
+            transition: 0.3s;
+          }
+          span:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            height: 100%;
+            width: 4.0625rem;
+            transition: 0.3s;
+          }
+        }
+
+        .product-content__button:hover {
+          span:nth-child(1) {
+            background-color: #000;
+            transition: 0.3s;
+          }
+
+          span:nth-child(2) {
+            background-color: #1e1e1e;
+            transition: 0.3s;
+          }
+        }
+
+        .product-content__button:disabled{
+          span:nth-child(1){
+            background-color: #1e1e1e;
+          }
+          span:nth-child(2){
+            background-color: #2b2b2b;
+          }
+        }
+
         .product-content__tabs {
           display: flex;
           flex-direction: column;
           width: 100%;
 
           .tabs-list {
+            margin-top: 2rem;
             display: flex;
             gap: 1.5rem;
 
@@ -335,18 +398,18 @@
   }
 }
 
-@media (max-width: 1300px){
-  .product{
+@media (max-width: 1300px) {
+  .product {
     margin-top: 10rem;
   }
 
-  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button{
+  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button {
     flex-basis: calc((100% - (0.5rem * 5)) / 6);
   }
 }
 
-@media (max-width: 1250px){
-  .product .product-container .product-content .product-content__images{
+@media (max-width: 1250px) {
+  .product .product-container .product-content .product-content__images {
     width: 25rem;
   }
 }
@@ -446,43 +509,43 @@
 }
 
 @media (max-width: 767px) {
-  .product .product-container .product-content .product-content__info{
+  .product .product-container .product-content .product-content__info {
     width: 20rem;
   }
 
-  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button{
+  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button {
     flex-basis: calc((100% - (0.5rem * 4)) / 5);
   }
 }
 
 @media (max-width: 700px) {
-  .product .product-container .product-content .product-content__images{
+  .product .product-container .product-content .product-content__images {
     width: 18rem;
   }
 
-  .product .product-container .product-content .product-content__info{
+  .product .product-container .product-content .product-content__info {
     width: 20rem;
   }
 
-  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button{
+  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button {
     flex-basis: calc((100% - (0.5rem * 4)) / 5);
   }
 
-  .product .product-container .product-content .product-content__images .product-content__images__second .product-content__image img{
+  .product .product-container .product-content .product-content__images .product-content__images__second .product-content__image img {
     object-fit: contain;
   }
 }
 
 @media (max-width: 699px) {
-  .product .product-container .product-content .product-content__info{
+  .product .product-container .product-content .product-content__info {
     width: 15rem;
   }
 
-  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button{
+  .product .product-container .product-content .product-content__info .product-content__info-sizes .info-sizes__bottom button {
     flex-basis: calc((100% - (0.5rem * 3)) / 4);
   }
 
-  .product .product-container .product-content .product-content__info .product-content__tabs .tabs-list{
+  .product .product-container .product-content .product-content__info .product-content__tabs .tabs-list {
     gap: 1.5rem;
     overflow: scroll;
   }
@@ -504,7 +567,6 @@
             flex-wrap: nowrap;
 
             .product-content__image {
-
               img {
                 width: 10rem;
                 height: 10rem;
@@ -513,7 +575,7 @@
           }
         }
 
-        .product-content__info{
+        .product-content__info {
           margin-top: 2rem;
           width: 22rem;
         }
@@ -527,8 +589,8 @@
     .product-container {
       .product-content {
         align-items: center;
-        
-        .product-content__info{
+
+        .product-content__info {
           margin-top: 1.5rem;
           width: 22rem;
           margin-left: 0;

@@ -17,7 +17,7 @@ import { store } from "./redux/store.js";
 import LoginPage from "./pages/Auth/LoginPage.jsx";
 import RegisterPage from "./pages/Auth/RegisterPage.jsx";
 import HomePage from "./pages/Home/HomePage.jsx";
-import ProfilePage from "./pages/Home/ProfilePage.jsx";
+import ProfilePage from "./pages/Profile/ProfilePage.jsx";
 import MyAccount from "./screens/Profile/MyAccount.jsx";
 import MyOrders from "./screens/Profile/MyOrders.jsx";
 import FavoriteProducts from "./screens/Profile/FavoriteProducts.jsx";
@@ -27,7 +27,8 @@ import ChangePassword from "./screens/Profile/ChangePassword.jsx";
 import EditProfile from "./screens/Profile/EditProfile.jsx";
 import EditAddress from "./screens/Profile/EditAddress.jsx";
 import FullProduct from "./components/Product/FullProduct.jsx";
-import Catalog from "./screens/Catalog/Catalog.jsx";
+import CatalogPage from "./pages/Catalog/CatalogPage.jsx";
+import CartPage from "./pages/Cart/CartPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,7 +36,8 @@ const router = createBrowserRouter(
       <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<RegisterPage />} />
       <Route index element={<HomePage />} />
-      <Route path="catalog" element={<Catalog />} />
+      <Route path="catalog" element={<CatalogPage />} />
+      <Route path="cart" element={<CartPage/>}/>
       <Route path="profile/*" element={<ProfilePage />}>
         <Route path="account" element={<MyAccount />} />
         <Route path="edit" element={<EditProfile />} />

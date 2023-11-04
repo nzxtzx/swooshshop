@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ProfileSidebar from "./ProfileSidebar";
-import { Outlet, Navigate, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import ProfileControllButtons from "../Profile/ProfileControllButtons"
 
 const Profile = () => {

@@ -9,6 +9,7 @@ import ReviewPopup from "./ReviewPopup";
 import ReviewPopupManager from "./ReviewPopupManager";
 import { selectIsAuth } from "../../redux/slices/auth.slice";
 import ProductReview from "./ProductReview";
+import { addToCart } from "../../redux/slices/cart.slice";
 
 const FullProduct = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -19,6 +20,23 @@ const FullProduct = () => {
   const [isSizesTableOpen, setSizesTableOpen] = useState(false);
   const [isReviewOpen, setReviewOpen] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("Please select both size and color before adding to cart");
+  const [selectedSize, setSelectedSize] = useState();
+  const [selectedColor, setSelectedColor] = useState();
+
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+  };
+
+  const handleColorClick = (colorName, hexValue) => {
+    setSelectedColor(colorName, hexValue);
+  };
+
+  useEffect(() => {
+    if (selectedSize !== null && selectedColor !== null) {
+      console.log(selectedSize);
+    }
+  }, [selectedSize, selectedColor]);
 
   const handleToggleTablePopup = () => {
     setSizesTableOpen((prevIsOpen) => !prevIsOpen);
@@ -28,7 +46,7 @@ const FullProduct = () => {
     if (isAuth) {
       setReviewOpen((prevIsOpen) => !prevIsOpen);
     } else {
-      setIsError("Please register or log in to leave a review.");
+      setIsError("Please register or login to leave a review.");
     }
   };
 
@@ -47,6 +65,22 @@ const FullProduct = () => {
   useEffect(() => {
     dispatch(fetchProduct({ id }));
   }, []);
+
+  const handleAddToCart = () => {
+    if (selectedSize && selectedColor) {
+      const product = {
+        id: singleProduct.product._id,
+        name: singleProduct.product.product.name,
+        price: singleProduct.product.product.price,
+        color: selectedColor,
+        hexValue: singleProduct.product.product.colors[selectedColor],
+        size: selectedSize,
+        image: singleProduct.product.product.image[0],
+      };
+
+      dispatch(addToCart(product));
+    }
+  };
 
   return (
     <div className="product">
@@ -99,7 +133,7 @@ const FullProduct = () => {
               <div className="product-content__info-colors">
                 <p>Colors:</p>
                 {Object.entries(singleProduct.product.product.colors).map(([colorName, hexValue]) => (
-                  <span key={colorName} style={{ backgroundColor: hexValue }}></span>
+                  <span key={colorName} style={{ backgroundColor: hexValue, outline: selectedColor === colorName ? "1px solid #A1A1A1" : "none" }} onClick={() => handleColorClick(colorName, hexValue)}></span>
                 ))}
               </div>
               <div className="product-content__info-sizes">
@@ -111,7 +145,7 @@ const FullProduct = () => {
                 </div>
                 <div className="info-sizes__bottom">
                   {singleProduct.product.product.sizes.map((sizeInfo) => (
-                    <button key={sizeInfo.size} disabled={!sizeInfo.isAvailable}>
+                    <button key={sizeInfo.size} disabled={!sizeInfo.isAvailable} onClick={() => handleSizeClick(sizeInfo.size)} className={selectedSize === sizeInfo.size ? "active" : ""}>
                       {sizeInfo.size}
                     </button>
                   ))}
@@ -121,6 +155,20 @@ const FullProduct = () => {
                 {singleProduct.product.product.oldPrice && <p className="info-colors__prices-old">{singleProduct.product.product.oldPrice}$</p>}
                 {singleProduct.product.product.price && <p className="info-colors__prices-current">{singleProduct.product.product.price}$</p>}
               </div>
+              <button className="product-content__button" onClick={handleAddToCart} disabled={!selectedSize || !selectedColor}>
+                <span>Add to cart</span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="19" viewBox="0 0 17 19" fill="none">
+                    <path
+                      d="M5.5659 8.55556V3.83333C5.5659 3.08189 5.87498 2.36122 6.42514 1.82986C6.9753 1.29851 7.72147 1 8.49951 1C9.27755 1 10.0237 1.29851 10.5739 1.82986C11.124 2.36122 11.4331 3.08189 11.4331 3.83333V8.55556M2.95597 5.72222H14.044C14.326 5.72219 14.6047 5.78105 14.8609 5.89477C15.1171 6.00849 15.3449 6.17438 15.5285 6.38107C15.7121 6.58776 15.8473 6.83035 15.9248 7.09222C16.0022 7.35409 16.0201 7.62904 15.9773 7.89822L14.7501 15.5973C14.6435 16.2664 14.2925 16.8766 13.7604 17.3173C13.2284 17.758 12.5506 18.0002 11.8497 18H5.14933C4.44859 18 3.77101 17.7577 3.23919 17.317C2.70738 16.8763 2.35646 16.2663 2.24995 15.5973L1.02272 7.89822C0.979863 7.62904 0.997778 7.35409 1.07524 7.09222C1.15271 6.83035 1.28788 6.58776 1.47151 6.38107C1.65514 6.17438 1.88288 6.00849 2.1391 5.89477C2.39533 5.78105 2.67399 5.72219 2.95597 5.72222Z"
+                      stroke="white"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
               <div className="product-content__tabs">
                 <div className="tabs-list">
                   <button className={activeTab === "tabs-item__description" ? "tabs-item__description active" : ""} onClick={() => handleTabClick("tabs-item__description")}>
