@@ -38,11 +38,10 @@
       align-items: center;
 
       .catalog-options__quantity {
-        width: 14rem;
+        width: auto;
         color: #b5b5b5;
         font-size: 0.9375rem;
         font-weight: 400;
-        line-height: 0.625rem;
         text-transform: uppercase;
       }
 
@@ -229,9 +228,13 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .catalog {
     margin-top: 10rem;
+
+    .catalog-products{
+      width: 56.3rem;
+    }
 
     .catalog-title {
       padding: 0 3.8rem;
@@ -242,12 +245,16 @@
   }
 
   .catalog-products__list {
-    justify-content: flex-start;
+    justify-content: center;
     padding: 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  .catalog .catalog-products .catalog-products__list .product-card {
+    height: 21rem;
+  }
+  
   .catalog {
     margin-top: 8rem;
 
@@ -279,7 +286,26 @@
   }
 }
 
+@media (max-width: 767px) {
+  .catalog .catalog-products {
+    width: 41.8rem;
+  }
+  
+}
+
+@media (max-width: 700px) {
+  .catalog .catalog-products {
+    width: 37.3rem;
+  }
+  
+}
+
+
 @media (max-width: 425px) {
+  .catalog .catalog-products .catalog-products__list .product-card {
+    height: 21rem;
+  }
+
   .catalog {
     .catalog-title {
       h1 {
@@ -320,13 +346,38 @@
 }
 
 @media (max-width: 424px) {
+  .catalog .catalog-products {
+    width: 23rem;
+  }
+
   .catalog .catalog-container {
     padding: 0;
   }
 
   .catalog .catalog-products .catalog-products__list {
     gap: 3.125rem 1rem;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 375px) {
+  .catalog .catalog-products {
+    width: 21rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .catalog .catalog-products {
+    width: 21rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .catalog .catalog-products {
+    width: 18rem;
+  }
+  .catalog .catalog-products .catalog-products__list .product-card {
+    height: 18rem;
   }
 }
 
@@ -337,11 +388,6 @@
       .catalog__pagination-buttons {
         width: 100%;
         overflow-x: scroll;
-      }
-    }
-    .catalog-products {
-      .catalog-products__list {
-        justify-content: center;
       }
     }
   }
