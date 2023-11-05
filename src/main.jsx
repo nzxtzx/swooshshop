@@ -29,6 +29,7 @@ import EditAddress from "./screens/Profile/EditAddress.jsx";
 import FullProduct from "./components/Product/FullProduct.jsx";
 import CatalogPage from "./pages/Catalog/CatalogPage.jsx";
 import CartPage from "./pages/Cart/CartPage.jsx";
+import NotFoundPage from "./pages/NotFound/NotFoundPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,6 +52,7 @@ const router = createBrowserRouter(
       <Route path="products/*">
         <Route path="product/:id" element={<FullProduct />} />
       </Route>
+      <Route path="/*" element={<NotFoundPage/>}/>
     </Route>
   )
 );

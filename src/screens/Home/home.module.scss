@@ -2,11 +2,16 @@
   .home-container {
     display: flex;
     align-items: center;
+
+    .home-products{
+      max-width: 85rem;
+      margin: 0 auto;
+    }
   }
 
   .home-products__list-first,
   .home-products__list-second {
-    margin-top: 13rem;
+    margin-top: 7rem;
 
     h1 {
       max-width: 15rem;
@@ -85,6 +90,11 @@
 
 @media (max-width: 1024px) {
   .home {
+    .home-container{
+      .home-products{
+        max-width: 53rem;
+      }
+    }
     .home-products__list-first {
       margin-top: 5rem;
     }
