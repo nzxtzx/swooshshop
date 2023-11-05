@@ -3,7 +3,7 @@
   .cart-container {
     max-width: 85rem;
     padding: 0 1.5rem;
-    margin: 8rem auto 0rem;
+    margin: 5rem auto 0rem;
 
     .cart-title {
       color: #000;
@@ -15,6 +15,87 @@
 
     .cart-content {
       display: flex;
+      justify-content: center;
+
+      .cart-empty {
+        margin-top: 7.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+          margin: 0;
+          margin-top: 2.5rem;
+          color: #1e1e1e;
+          text-align: center;
+          font-size: 2.1875rem;
+          font-weight: 500;
+          line-height: 2.75rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          margin-top: 1.25rem;
+          max-width: 40rem;
+          color: #383838;
+          text-align: center;
+          font-size: 0.9375rem;
+          font-weight: 400;
+          line-height: 1.5rem;
+          text-transform: uppercase;
+
+          span {
+            font-weight: 700;
+          }
+        }
+
+        .cart-empty__button {
+          margin-top: 2rem;
+          display: flex;
+          height: 4.0625rem;
+          cursor: pointer;
+          border: none;
+          padding: 0;
+          background: #fff;
+          max-width: 19.1875rem;
+
+          span:nth-child(1) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ff6915;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 500;
+            width: 15.125rem;
+            height: 100%;
+            transition: 0.3s;
+          }
+          span:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fb5a00;
+            height: 100%;
+            width: 4.0625rem;
+            transition: 0.3s;
+          }
+        }
+
+        .cart-empty__button:hover {
+          span:nth-child(1) {
+            background-color: #fb5a00;
+            transition: 0.3s;
+          }
+
+          span:nth-child(2) {
+            background-color: #ff6915;
+            transition: 0.3s;
+          }
+        }
+      }
     }
   }
 }
@@ -50,14 +131,6 @@ tr {
   .cart-products__options {
     display: none;
     visibility: hidden;
-  }
-
-  .empty-cart-message {
-    color: #f81d2a;
-    font-size: 0.75rem;
-    font-weight: 500;
-    line-height: 1.125rem;
-    text-transform: uppercase;
   }
 
   .cart-product {
@@ -296,6 +369,12 @@ tr {
   }
 }
 
+@media (max-width: 1300px) {
+  .cart .cart-container {
+    margin: 8rem auto 0rem;
+  }
+}
+
 @media (max-width: 1250px) {
   .cart .cart-container .cart-content {
     flex-direction: column;
@@ -318,6 +397,21 @@ tr {
 }
 
 @media (max-width: 850px) {
+  .cart .cart-container .cart-content .cart-empty h4{
+    margin-top: 1.25rem;
+    font-size: 1.2rem;
+    line-height: normal;
+  }
+
+  .cart .cart-container .cart-content .cart-empty p{
+    max-width: 30rem;
+    font-size: 0.875rem;
+  }
+
+  .cart .cart-container .cart-content .cart-empty .cart-empty__button{
+    margin-top: 1.25rem;
+  }
+
   .cart-products__sections {
     tr {
       th:not(:first-child) {
@@ -414,20 +508,28 @@ tr {
 }
 
 @media (max-width: 359px) {
-    .cart-products__content .cart-product{
-        align-items: flex-start;
+  .cart .cart-container .cart-content .cart-empty .cart-empty__button{
+    span:nth-child(1){
+      width: 13.0625rem;
     }
+    span:nth-child(2){
+      width: 3.5625rem;
+    }
+  }
+  .cart-products__content .cart-product {
+    align-items: flex-start;
+  }
 
-    .cart-products__content .cart-product .product-info .product-info__name p{
-        font-size: 0.9375rem;
-    }
+  .cart-products__content .cart-product .product-info .product-info__name p {
+    font-size: 0.9375rem;
+  }
 
-    .cart-products__content .cart-product .product-info .product-info__params{
-        flex-direction: column;
-    }
+  .cart-products__content .cart-product .product-info .product-info__params {
+    flex-direction: column;
+  }
 
-    .cart-products__content .cart-product .product-info .product-info__params .product-info__params-size{
-        margin: 0;
-        font-size: 0.875rem;
-    }
+  .cart-products__content .cart-product .product-info .product-info__params .product-info__params-size {
+    margin: 0;
+    font-size: 0.875rem;
+  }
 }
