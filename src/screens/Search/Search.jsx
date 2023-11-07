@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,6 +31,10 @@ const Search = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
     dispatch(fetchSearchingProducts({ productsName: { product: searchText }, pageNumber: page }));
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const onSubmit = async (productName) => {
@@ -42,8 +46,6 @@ const Search = () => {
       console.error("An error occurred:", err);
     }
   };
-
-  console.log(searchingProducts.products)
 
   return (
     <div className="search">

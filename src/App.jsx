@@ -5,6 +5,7 @@ import Header from "./components/Header/Header.jsx";
 import { Outlet } from "react-router-dom";
 import { fetchAuthMe, selectIsAuth } from "./redux/slices/auth.slice.js";
 import ScrollToTop from "./hooks/ScrollToTop.js";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function App() {
       <ScrollToTop />
       <Header />
       <Outlet />
+      <Footer/>
     </>
   );
 }
