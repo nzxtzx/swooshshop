@@ -1,3 +1,5 @@
+import React from "react";
+
 const CatalogPagination = ({ totalPages, currentPage, onPageChange, visiblePages }) => {
   const renderPaginationButtons = () => {
     const buttons = [];

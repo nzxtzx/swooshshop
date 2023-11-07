@@ -34,8 +34,6 @@ const Catalog = () => {
     );
   };
 
-  console.log("Products:", filteredProducts && filteredProducts.products.length);
-
   return (
     <div className="catalog">
       <div className="catalog-title">

@@ -26,8 +26,15 @@ export const fetchProducts = createAsyncThunk("fetchProducts", async () => {
   return data;
 });
 
-export const fetchFilteredProducts = createAsyncThunk("products/fetchFiltered", async ({filterParams, pageNumber, pageSize}) => {
-  const {data} = await axios.get(`/products/filters?`, {params: filterParams,});
+export const fetchFilteredProducts = createAsyncThunk("products/fetchFiltered", async ({ filterParams }) => {
+  const { data } = await axios.get(`/products/filters?`, { params: filterParams });
+
+  return data;
+});
+
+export const fetchSearchingProducts = createAsyncThunk("products/fetchSearchingProducts", async ({ productsName, pageNumber, pageSize }) => {
+  const params = new URLSearchParams({ ...productsName, pageNumber, pageSize }).toString();
+  const { data } = await axios.get(`/products/search?${params}`);
 
   return data;
 });
@@ -51,6 +58,10 @@ const initialState = {
     status: "loading",
   },
   filteredProducts: {
+    products: [],
+    status: "loading",
+  },
+  searchingProducts: {
     products: [],
     status: "loading",
   },
@@ -112,7 +123,7 @@ const homeProductsSlice = createSlice({
       state.allProducts.products = [];
       state.allProducts.status = "error";
     },
-    [fetchFilteredProducts.pending]: (state, action) => {
+    [fetchFilteredProducts.pending]: (state) => {
       state.filteredProducts.products = [];
       state.filteredProducts.status = "loading";
     },
@@ -123,6 +134,18 @@ const homeProductsSlice = createSlice({
     [fetchFilteredProducts.rejected]: (state) => {
       state.filteredProducts.products = [];
       state.filteredProducts.status = "error";
+    },
+    [fetchSearchingProducts.pending]: (state) => {
+      state.searchingProducts.products = [];
+      state.searchingProducts.status = "loading";
+    },
+    [fetchSearchingProducts.fulfilled]: (state, action) => {
+      state.searchingProducts.products = action.payload;
+      state.searchingProducts.status = "loaded";
+    },
+    [fetchSearchingProducts.rejected]: (state) => {
+      state.searchingProducts.products = [];
+      state.searchingProducts.status = "error";
     },
   },
 });
