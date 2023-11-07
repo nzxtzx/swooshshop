@@ -386,14 +386,14 @@
 
 @media (max-width: 375px) {
   .search-container {
-    padding: 0 1.3rem;
+    padding: 0 1rem;
 
     .search-products__list {
-      gap: 3.125rem 1.3rem;
+      gap: 3.125rem 1rem;
     }
 
     .product-card {
-      width: 9.75rem;
+      max-width: 9.75rem;
     }
   }
 }
@@ -405,7 +405,7 @@
     .search-products__list {
       gap: 3.125rem 1rem;
     }
-    
+
     .product-card {
       width: 9.75rem;
     }
