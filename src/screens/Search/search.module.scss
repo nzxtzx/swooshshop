@@ -333,13 +333,11 @@
 @media (max-width: 425px) {
   .search-container {
     padding: 0 1.5rem;
+
     .product-card {
-      width: 11.15rem;
+      width: calc(50% - 10px);
 
       .product-card__top {
-        width: 100%;
-        height: 13rem;
-
         .swiper-wrapper {
           .swiper-slide {
             img {
@@ -352,84 +350,62 @@
   }
 }
 
-@media (max-width: 414px) {
-  .search-container {
-    .product-card {
-      width: 10.8rem;
-    }
-  }
-}
+@media (max-width: 375px) {
+  .product-card {
+    height: 17rem;
 
-@media (max-width: 390px) {
-  .search-container {
-    .product-card {
-      width: 10.06rem;
-
-      .product-card__top {
-        width: 100%;
-
-        .product-card__swiper .swiper-pagination {
-          width: 7rem;
-        }
+    .product-card__top {
+    
+      .product-card__swiper .swiper-pagination {
+        top: 12rem;
+        width: 7rem;
       }
     }
   }
 }
 
-@media (max-width: 393px) {
+@media (max-width: 359px) {
   .search-container {
+
     .product-card {
-      width: 10.15rem;
+      height: 17rem;
+
+      .product-card__top {
+        height: 9rem;
+
+        
+        .product-card__swiper .swiper-pagination {
+          width: 6.5rem;
+        }
+      }
     }
   }
-}
 
-@media (max-width: 375px) {
-  .search-container {
-    padding: 0 1rem;
-
-    .search-products__list {
-      gap: 3.125rem 1rem;
-    }
-
-    .product-card {
-      max-width: 9.75rem;
-    }
-  }
-}
-
-@media (max-width: 360px) {
-  .search-container {
-    padding: 0 1rem;
-
-    .search-products__list {
-      gap: 3.125rem 1rem;
-    }
-
-    .product-card {
-      width: 9.75rem;
+  .search-button{
+    span:nth-child(1){
+      width: 13.125rem;
     }
   }
 }
 
 @media (max-width: 320px) {
   .search-container {
-    .search-products__list {
-      gap: 3.125rem 1rem;
-    }
+
     .product-card {
-      width: 8.5rem;
-      height: 16rem;
 
       .product-card__top {
-        width: 100%;
         height: 9rem;
 
         .product-card__swiper .swiper-pagination {
-          width: 6rem;
           top: 8rem;
         }
       }
     }
   }
+
+  .catalog__pagination .catalog-pagination__button{
+    width: 50px;
+    height: 50px;
+  }
+
 }

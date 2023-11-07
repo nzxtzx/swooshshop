@@ -370,18 +370,24 @@
   }
 }
 
-@media (max-width: 375px) {
-  .catalog .catalog-products {
-    width: 21rem;
-  }
-}
-
 @media (max-width: 359px) {
   .catalog .catalog-products {
     width: 18rem;
   }
   .catalog .catalog-products .catalog-products__list .product-card {
     height: 18rem;
+  }
+
+  .catalog{
+    .catalog-products{
+      .catalog-products__list{
+        .product-card{
+          .swiper-pagination{
+            top: 8rem;
+          }
+        }
+      }
+    }
   }
 }
 
