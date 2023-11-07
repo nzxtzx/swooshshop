@@ -10,12 +10,12 @@ const DiscountedPagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(window.innerWidth === 1024 ? 4 : 3);
 
-  const totalProducts = discountedProducts.products.totalProducts
+  const totalProducts = discountedProducts.products.totalProducts;
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-  
+
       if (width <= 375) {
         setPageSize(4);
       } else if (width <= 425) {
@@ -28,11 +28,11 @@ const DiscountedPagination = () => {
         setPageSize(4);
       }
     };
-  
+
     window.addEventListener("resize", handleResize);
-  
+
     setTimeout(handleResize, 500);
-  
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -41,8 +41,8 @@ const DiscountedPagination = () => {
   }, [dispatch, pageSize]);
 
   const handlePageChange = (page) => {
-      setCurrentPage(page);
-      dispatch(fetchDiscountedProductsHomeData({ page, pageSize }));
+    setCurrentPage(page);
+    dispatch(fetchDiscountedProductsHomeData({ page, pageSize }));
   };
 
   return (

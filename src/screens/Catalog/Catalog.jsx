@@ -29,9 +29,7 @@ const Catalog = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
     dispatch(setPage(page));
-    dispatch(
-      fetchFilteredProducts({ filterParams: filters, pageNumber: page, pageSize: filters.pageSize })
-    );
+    dispatch(fetchFilteredProducts({ filterParams: filters, pageNumber: page, pageSize: filters.pageSize }));
   };
 
   return (
@@ -53,32 +51,19 @@ const Catalog = () => {
           )}
           {filteredProducts.status === "loaded" && (
             <div className="catalog-products__list">
-              {filteredProducts.products.limitedFilteredProducts.length === 0 && (
-                <p className="catalog-message">There are no products behind the selected options</p>
-              )}
+              {filteredProducts.products.limitedFilteredProducts.length === 0 && <p className="catalog-message">There are no products behind the selected options</p>}
               {filteredProducts.products.limitedFilteredProducts.map((product) => (
-                <Product
-                  key={product._id}
-                  id={product._id}
-                  name={product.product.name}
-                  image={product.product.image}
-                  gender={product.product.gender}
-                  price={product.product.price}
-                  oldPrice={product.product.oldPrice}
-                  options={product.product}
-                />
+                <Product key={product._id} id={product._id} name={product.product.name} image={product.product.image} gender={product.product.gender} price={product.product.price} oldPrice={product.product.oldPrice} options={product.product} />
               ))}
             </div>
           )}
-          {filteredProducts.status === "loaded" &&
-            filteredProducts.products.totalPages > 1 &&
-            filteredProducts.products.limitedFilteredProducts.length > 0 && (
-              <CatalogPagination
-                totalPages={filteredProducts.products.totalPages}
-                onPageChange={handlePageChange}
-                currentPage={currentPage}
-              />
-            )}
+          <div className="catalog-products__list">
+            <ProductSkeleton />
+            <ProductSkeleton />
+            <ProductSkeleton />
+            <ProductSkeleton />
+          </div>
+          {filteredProducts.status === "loaded" && filteredProducts.products.totalPages > 1 && filteredProducts.products.limitedFilteredProducts.length > 0 && <CatalogPagination totalPages={filteredProducts.products.totalPages} onPageChange={handlePageChange} currentPage={currentPage} />}
         </div>
       </div>
     </div>

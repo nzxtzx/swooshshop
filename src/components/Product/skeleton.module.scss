@@ -1,7 +1,7 @@
 .product-skeleton {
   display: flex;
   flex-direction: column;
-  width: 27.5rem;
+  width: calc(50% - 10px);
   height: 36.625rem;
 }
 
@@ -76,7 +76,6 @@
 
 @media (max-width: 768px) {
   .product-skeleton {
-    width: 14.125rem;
     height: 19rem;
   }
 
@@ -113,5 +112,17 @@
     width: 30%;
     background-color: #f6f6f6;
     animation: loadingAnimationSecond 1.5s infinite ease-in-out;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-skeleton{
+    width: calc(33.3333% - 13.5px);
+  }
+}
+
+@media (max-width: 767px) {
+  .product-skeleton{
+    width: calc(50% - 15px);
   }
 }
