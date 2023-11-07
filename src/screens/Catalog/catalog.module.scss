@@ -306,6 +306,10 @@
     height: 21rem;
   }
 
+  .product-card .product-card__top .product-card__swiper .swiper-wrapper .swiper-slide img {
+    object-fit: contain;
+  }
+
   .catalog {
     .catalog-title {
       h1 {
