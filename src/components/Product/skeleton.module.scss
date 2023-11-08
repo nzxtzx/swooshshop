@@ -1,7 +1,7 @@
 .product-skeleton {
   display: flex;
   flex-direction: column;
-  width: calc((85rem - 2 * 1rem) / 3);
+  width: 27.5rem;
   height: 36.625rem;
 }
 
@@ -74,9 +74,17 @@
   }
 }
 
+@media (max-width: 1440px) {
+  .product-skeleton{
+    width: 25.5rem;
+  }
+  
+}
+
 @media (max-width: 768px) {
   .product-skeleton {
     height: 19rem;
+    width: 14.125rem;
   }
 
   .skeleton-image {
@@ -115,15 +123,9 @@
   }
 }
 
-@media (max-width: 768px) {
-  .product-skeleton{
-    width: calc((45rem - 2 * 1rem) / 3);
-  }
-}
-
 @media (max-width: 767px) {
   .product-skeleton{
-    width: calc(50% - 15px);
+    width: 20rem;
   }
 }
 

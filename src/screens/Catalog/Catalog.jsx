@@ -52,6 +52,14 @@ const Catalog = () => {
               <ProductSkeleton />
             </div>
           )}
+          <div className="catalog-products__list">
+            <ProductSkeleton />
+            <ProductSkeleton />
+            <ProductSkeleton />
+            <ProductSkeleton />
+            <ProductSkeleton />
+            <ProductSkeleton />
+          </div>
           {filteredProducts.status === "loaded" && (
             <div className="catalog-products__list">
               {filteredProducts.products.limitedFilteredProducts.length === 0 && <p className="catalog-message">There are no products behind the selected options</p>}

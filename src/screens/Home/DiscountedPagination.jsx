@@ -78,14 +78,11 @@ const DiscountedPagination = () => {
             ))}
           </div>
         )}
-        {discountedProducts.status === "loaded" && (
-          <div className="home-products__list">
-            {discountedProducts &&
-              discountedProducts.products.discountedLimitedProducts.map((product) => (
-                <Product key={product._id} id={product._id} name={product.product.name} image={product.product.image} gender={product.product.gender} price={product.product.price} oldPrice={product.product.oldPrice} options={product.product} />
-              ))}
+        <div className="home-products__list">
+            {Array.from({ length: pageSize }).map((_, index) => (
+              <ProductSkeleton key={index} />
+            ))}
           </div>
-        )}
       </div>
     </div>
   );

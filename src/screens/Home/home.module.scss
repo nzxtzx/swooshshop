@@ -12,6 +12,7 @@
   .home-products__list-first,
   .home-products__list-second {
     margin-top: 7rem;
+    width: 100%;
 
     h1 {
       max-width: 15rem;
@@ -286,35 +287,6 @@
 @media (max-width: 375px) {
   .home .home-products__list-top {
     padding: 0 1rem;
-  }
-
-  .product-card{
-    width: 10rem;
-
-    .product-card__top{
-      .product-card__swiper .swiper-pagination{
-        width: 6rem;
-      }
-    }
-
-    .product-card__bottom{
-        .product-card__options{
-          .product-card__popularity{
-            width: 3rem;
-            font-size: 0.4875rem;
-          }
-
-          .product-card__status{
-            width: 4rem;
-            font-size: 0.4875rem;
-          }
-
-          .product-card__sale{
-            width: 2rem;
-            font-size: 0.4875rem;
-          }
-        }
-    }
   }
 
   .home .home-products__list-first {
