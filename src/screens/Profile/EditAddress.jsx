@@ -67,7 +67,6 @@ const EditAddress = () => {
             <p className="address-form__text form-text">
               Country<span>*</span>
             </p>
-            {errors.country && <p className="edit-message">{errors.country.message}</p>}
             <label className={`address-form__label form__label adress-label ${errors.country ? "error-label" : ""}`}>
               <input
                 type="text"
@@ -85,7 +84,6 @@ const EditAddress = () => {
             <p className="address-form__text form-text">
               City<span>*</span>
             </p>
-            {errors.city && <p className="edit-message">{errors.city.message}</p>}
             <label className={`address-form__label form__label ${errors.city ? "error-label" : ""}`}>
               <input
                 type="text"
@@ -105,7 +103,6 @@ const EditAddress = () => {
             <p className="address-form__text form-text">
               Street<span>*</span>
             </p>
-            {errors.street && <p className="edit-message">{errors.street.message}</p>}
             <label className={`address-form__label form__label ${errors.street ? "error-label" : ""}`}>
               <input
                 type="text"
@@ -123,7 +120,6 @@ const EditAddress = () => {
             <p className="address-form__text form-text">
               Index<span>*</span>
             </p>
-            {errors.postalCode && <p className="edit-message">{errors.postalCode.message}</p>}
             <label className={`address-form__label form__label ${errors.postalCode ? "error-label" : ""}`}>
               <input
                 type="text"
@@ -141,7 +137,6 @@ const EditAddress = () => {
         <p className="address-form__text form-text">
           House number \ Apartment<span>*</span>
         </p>
-        {errors.houseNumber && <p className="edit-message">{errors.houseNumber.message}</p>}
         <label className={`address-form__label form__label last-label ${errors.houseNumber ? "error-label" : ""}`}>
           <input
             type="text"

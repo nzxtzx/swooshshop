@@ -63,15 +63,13 @@ const ChangePassword = () => {
         <p className="password-form__text form-text">
           Current password<span>*</span>
         </p>
-        {errors.oldPassword && <p className="edit-message">{errors.oldPassword.message}</p>}
         <label className={`password-form__label form__label ${errors.oldPassword ? "error-label" : ""} ${labelClasses.oldPassword}`}>
-          <input type="password" className={`password-form__input form__input ${errors.oldPassword ? "input-error" : ""} ${inputClasses.oldPassword}`} placeholder="Enter your current password" {...register("oldPassword", { required: "Enter your current password".toUpperCase() })} />
+          <input type="password" className={`password-form__input form__input ${errors.oldPassword ? "input-error" : ""} ${inputClasses.oldPassword}`}  placeholder={errors.oldPassword ? errors.oldPassword.message : "Enter your current password"} {...register("oldPassword", { required: "Enter your current password".toUpperCase() })} />
         </label>
 
         <p className="password-form__text form-text">
           New password<span>*</span>
         </p>
-        {errors.newPassword && <p className="edit-message">{errors.newPassword.message}</p>}
         <label className={`password-form__label form__label ${errors.newPassword ? "error-label" : ""}`}>
           <input
             type="password"
@@ -85,7 +83,6 @@ const ChangePassword = () => {
         <p className="password-form__text form-text">
           Repeat new password<span>*</span>
         </p>
-        {errors.repeatNewPassword && <p className="edit-message">{errors.repeatNewPassword.message}</p>}
         <label className={`password-form__label form__label ${errors.repeatNewPassword ? "error-label" : ""}`}>
           <input
             type="password"

@@ -40,7 +40,6 @@ const EditProfile = () => {
         <p className="edit-form__text form-text">
           Email<span>*</span>
         </p>
-        {errors.email && <p className="edit-message">{errors.email.message}</p>}
         <label className={`edit-form__label form__label ${errors.email ? "error-label" : ""}`}>
           <input
             type="email"
@@ -53,7 +52,6 @@ const EditProfile = () => {
         <p className="edit-form__text form-text">
           Full name<span>*</span>
         </p>
-        {errors.fullName && <p className="edit-message">{errors.fullName.message}</p>}
         <label className={`edit-form__label form__label ${errors.fullName ? "error-label" : ""}`}>
           <input
             type="text"
@@ -66,7 +64,6 @@ const EditProfile = () => {
         <p className="edit-form__text form-text">
           Phone number<span>*</span>
         </p>
-        {errors.phoneNumber && <p className="edit-message">{errors.phoneNumber.message}</p>}
         <label className={`edit-form__label form__label ${errors.phoneNumber ? "error-label" : ""}`}>
           <input
             type="tel"

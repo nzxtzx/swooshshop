@@ -47,6 +47,9 @@ const Catalog = () => {
               <ProductSkeleton />
               <ProductSkeleton />
               <ProductSkeleton />
+              <ProductSkeleton />
+              <ProductSkeleton />
+              <ProductSkeleton />
             </div>
           )}
           {filteredProducts.status === "loaded" && (
@@ -57,12 +60,6 @@ const Catalog = () => {
               ))}
             </div>
           )}
-          <div className="catalog-products__list">
-            <ProductSkeleton />
-            <ProductSkeleton />
-            <ProductSkeleton />
-            <ProductSkeleton />
-          </div>
           {filteredProducts.status === "loaded" && filteredProducts.products.totalPages > 1 && filteredProducts.products.limitedFilteredProducts.length > 0 && <CatalogPagination totalPages={filteredProducts.products.totalPages} onPageChange={handlePageChange} currentPage={currentPage} />}
         </div>
       </div>

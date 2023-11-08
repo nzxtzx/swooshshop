@@ -73,9 +73,9 @@ const DiscountedPagination = () => {
       <div className="home-products__list-bottom">
         {discountedProducts.status === "loading" && (
           <div className="home-products__list">
-            <ProductSkeleton />
-            <ProductSkeleton />
-            <ProductSkeleton />
+            {Array.from({ length: pageSize }).map((_, index) => (
+              <ProductSkeleton key={index} />
+            ))}
           </div>
         )}
         {discountedProducts.status === "loaded" && (

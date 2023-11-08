@@ -20,7 +20,6 @@ import HomePage from "./pages/Home/HomePage.jsx";
 import ProfilePage from "./pages/Profile/ProfilePage.jsx";
 import MyAccount from "./screens/Profile/MyAccount.jsx";
 import MyOrders from "./screens/Profile/MyOrders.jsx";
-import FavoriteProducts from "./screens/Profile/FavoriteProducts.jsx";
 import Logout from "./screens/Profile/Logout.jsx";
 import MyAdress from "./screens/Profile/MyAdress.jsx";
 import ChangePassword from "./screens/Profile/ChangePassword.jsx";
@@ -47,7 +46,6 @@ const router = createBrowserRouter(
         <Route path="orders" element={<MyOrders />} />
         <Route path="address" element={<MyAdress />} />
         <Route path="address/add" element={<EditAddress />} />
-        <Route path="favorites" element={<FavoriteProducts />} />
         <Route path="change-password" element={<ChangePassword />} />
         <Route path="logout" element={<Logout />} />
       </Route>

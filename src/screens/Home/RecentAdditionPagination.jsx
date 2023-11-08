@@ -16,7 +16,7 @@ const RecentAdditionPagination = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-  
+
       if (width <= 375) {
         setPageSize(4);
       } else if (width <= 425) {
@@ -29,11 +29,11 @@ const RecentAdditionPagination = () => {
         setPageSize(4);
       }
     };
-  
+
     window.addEventListener("resize", handleResize);
-  
+
     setTimeout(handleResize, 500);
-  
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -44,7 +44,7 @@ const RecentAdditionPagination = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
     dispatch(fetchProductsHomeData({ page, pageSize }));
-};
+  };
 
   return (
     <div className="home-products__list-first">
@@ -74,15 +74,17 @@ const RecentAdditionPagination = () => {
       <div className="home-products__list-bottom">
         {recentProducts.status === "loading" && (
           <div className="home-products__list">
-            <ProductSkeleton />
-            <ProductSkeleton />
-            <ProductSkeleton />
+            {Array.from({ length: pageSize }).map((_, index) => (
+              <ProductSkeleton key={index} />
+            ))}
           </div>
         )}
         {recentProducts.status === "loaded" && (
           <div className="home-products__list">
             {recentProducts &&
-              recentProducts.products.limitedProducts.map((product) => <Product key={product._id} id={product._id} name={product.product.name} image={product.product.image} gender={product.product.gender} price={product.product.price} oldPrice={product.product.oldPrice} options={product.product} />)}
+              recentProducts.products.limitedProducts.map((product) => (
+                <Product key={product._id} id={product._id} name={product.product.name} image={product.product.image} gender={product.product.gender} price={product.product.price} oldPrice={product.product.oldPrice} options={product.product} />
+              ))}
           </div>
         )}
       </div>
