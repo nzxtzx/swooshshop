@@ -30,6 +30,7 @@ import CatalogPage from "./pages/Catalog/CatalogPage.jsx";
 import CartPage from "./pages/Cart/CartPage.jsx";
 import NotFoundPage from "./pages/NotFound/NotFoundPage.jsx";
 import SearchPage from "./pages/Search/SearchPage.jsx";
+import FavouritesPage from "./pages/FavouritesPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="catalog" element={<CatalogPage />} />
       <Route path="cart" element={<CartPage/>}/>
       <Route path="search" element={<SearchPage/>}/>
+      <Route path="favorites" element={<FavouritesPage/>}/>
       <Route path="profile/*" element={<ProfilePage />}>
         <Route path="account" element={<MyAccount />} />
         <Route path="edit" element={<EditProfile />} />

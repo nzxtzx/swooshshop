@@ -138,8 +138,38 @@
         width: 4.375rem;
         border-left: 1px solid #eaeaea;
         cursor: pointer;
-      }
+        position: relative;
 
+        .favorites-counter {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          text-align: center;
+          top: 18px;
+          right: 15px;
+          width: 1.00075rem;
+          height: 1.00075rem;
+          background-color: #ff6915;
+          border-radius: 50%;
+          opacity: 0;
+          transition: 0.3s;
+        }
+
+        .favorites-counter.visible {
+          opacity: 1;
+          transition: 0.3s;
+        }
+
+        p {
+          color: #fff;
+          font-size: 0.5625rem;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+      }
+      
       .cart {
         display: flex;
         justify-content: center;

@@ -131,6 +131,19 @@
 
 @media (max-width: 425px) {
   .product-skeleton{
-    width: calc(50% - 10px);
+    width: 11rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .product-skeleton{
+    width: 10rem;
+  }
+}
+
+
+@media (max-width: 359px) {
+  .product-skeleton{
+    width: 8.5rem;
   }
 }

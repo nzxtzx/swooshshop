@@ -83,7 +83,7 @@ const RecentAdditionPagination = () => {
           <div className="home-products__list">
             {recentProducts &&
               recentProducts.products.limitedProducts.map((product) => (
-                <Product key={product._id} id={product._id} name={product.product.name} image={product.product.image} gender={product.product.gender} price={product.product.price} oldPrice={product.product.oldPrice} options={product.product} />
+                <Product key={product._id} fillColor={product.fillColor} id={product._id} name={product.product.name} image={product.product.image} gender={product.product.gender} price={product.product.price} oldPrice={product.product.oldPrice} options={product.product} />
               ))}
           </div>
         )}

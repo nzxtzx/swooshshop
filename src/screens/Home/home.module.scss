@@ -81,6 +81,7 @@
   .home-products__list-bottom {
     margin-top: 2.75rem;
     display: flex;
+    flex-direction: column;
 
     .home-products__list {
       display: flex;
@@ -254,6 +255,12 @@
 
   .product-card{
     width: 11rem;
+
+    .product-card__top{
+      .product-card__swiper .swiper-wrapper .swiper-slide img {
+        object-fit: contain;
+      }
+    }
   }
 
   .home-products__list-first,
@@ -285,6 +292,15 @@
 }
 
 @media (max-width: 375px) {
+  .product-card{
+
+    .product-card__top{
+      img{
+        object-fit: contain;
+      }
+    } 
+  }
+
   .home .home-products__list-top {
     padding: 0 1rem;
   }
