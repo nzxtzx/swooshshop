@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../ui/Buttons/Button";
 import { fetchProductReviews } from "../../redux/slices/products.slice";
+import { useParams } from "react-router-dom";
 
 const ReviewPopup = ({ isPopupOpen, onClosePopup }) => {
   const [productRating, setProductRating] = useState(0);
@@ -13,7 +14,7 @@ const ReviewPopup = ({ isPopupOpen, onClosePopup }) => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.data);
 
-  const productId = singleProduct.product._id;
+  const { id } = useParams();
 
   const {
     register,
@@ -41,7 +42,7 @@ const ReviewPopup = ({ isPopupOpen, onClosePopup }) => {
       } else {
         setErrorMessage("");
         setIsSuccess(true);
-        dispatch(fetchProductReviews({ id: productId, userId: userData._id, params: values }));
+        dispatch(fetchProductReviews({ id: id, userId: userData._id, params: values }));
         setTimeout(() => {
           onClosePopup();
         }, 2000);

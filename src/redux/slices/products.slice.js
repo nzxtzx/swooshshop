@@ -49,9 +49,9 @@ const initialState = {
     status: "loading",
   },
   singleProduct: {
-    product: [],
-    status: "loading",
+    product: {}, 
     reviews: [],
+    status: "loading",
   },
   allProducts: {
     products: [],
@@ -70,7 +70,8 @@ const initialState = {
 const homeProductsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+  },
   extraReducers: {
     [fetchProductsHomeData.pending]: (state, action) => {
       state.recentProducts.products = [];
@@ -102,14 +103,20 @@ const homeProductsSlice = createSlice({
       state.singleProduct.status = "loading";
     },
     [fetchProduct.fulfilled]: (state, action) => {
-      state.singleProduct.product = action.payload;
-      state.singleProduct.reviews = action.payload.reviews;
+      const { product, reviews } = action.payload;
+      state.singleProduct.product = product;
+      state.singleProduct.reviews = reviews;
       state.singleProduct.status = "loaded";
     },
     [fetchProduct.rejected]: (state) => {
       state.singleProduct.product = [];
       state.singleProduct.reviews = [];
       state.singleProduct.status = "error";
+    },
+    [fetchProductReviews.fulfilled]: (state, action) => {
+      const { product, reviews } = action.payload;
+      state.singleProduct.product = product;
+      state.singleProduct.reviews = reviews;
     },
     [fetchProducts.pending]: (state, action) => {
       state.allProducts.products = [];
@@ -150,4 +157,5 @@ const homeProductsSlice = createSlice({
   },
 });
 
+export const { addReviewToSingleProduct } = homeProductsSlice.actions;
 export const homeProductsReducer = homeProductsSlice.reducer;

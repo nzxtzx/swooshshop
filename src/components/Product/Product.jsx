@@ -25,6 +25,7 @@ const Product = ({ name, image, gender, price, oldPrice, options, id }) => {
     setFillColor(isFavourite ? 'none' : 'black');
   };
 
+
   return (
     <div className="product-card">
       <div className="product-card__top">

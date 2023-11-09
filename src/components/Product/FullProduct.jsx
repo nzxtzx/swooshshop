@@ -20,9 +20,9 @@ const FullProduct = () => {
   const [isSizesTableOpen, setSizesTableOpen] = useState(false);
   const [isReviewOpen, setReviewOpen] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("Please select both size and color before adding to cart");
   const [selectedSize, setSelectedSize] = useState();
   const [selectedColor, setSelectedColor] = useState();
+
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
@@ -69,13 +69,13 @@ const FullProduct = () => {
   const handleAddToCart = () => {
     if (selectedSize && selectedColor) {
       const product = {
-        id: singleProduct.product._id,
-        name: singleProduct.product.product.name,
-        price: singleProduct.product.product.price,
+        id: id,
+        name: singleProduct.product.name,
+        price: singleProduct.product.price,
         color: selectedColor,
-        hexValue: singleProduct.product.product.colors[selectedColor],
+        hexValue: singleProduct.product.colors[selectedColor],
         size: selectedSize,
-        image: singleProduct.product.product.image[0],
+        image: singleProduct.product.image[0],
       };
 
       dispatch(addToCart(product));
@@ -103,19 +103,19 @@ const FullProduct = () => {
         {singleProduct.status === "loaded" && (
           <div className="product-content">
             <div className="product-content__images">
-              {singleProduct.product.product.image && (
+              {singleProduct.product.image && (
                 <div className="product-content__images-first">
-                  <img src={singleProduct.product.product.image[0]} alt="First Image" />
+                  <img src={singleProduct.product.image[0]} alt="First Image" />
                   <div className="image-first__options">
-                    {singleProduct.product.product.sale && <p className="image-first__sale">{singleProduct.product.product.sale}%</p>}
-                    {singleProduct.product.product.status && <p className="image-first__status">{singleProduct.product.product.status}</p>}
-                    {singleProduct.product.product.popularity && <p className="image-first__popularity">{singleProduct.product.product.popularity}</p>}
+                    {singleProduct.product.sale && <p className="image-first__sale">{singleProduct.product.sale}%</p>}
+                    {singleProduct.product.status && <p className="image-first__status">{singleProduct.product.status}</p>}
+                    {singleProduct.product.popularity && <p className="image-first__popularity">{singleProduct.popularity}</p>}
                   </div>
                 </div>
               )}
-              {singleProduct.product.product.image && singleProduct.product.product.image.length > 1 && (
+              {singleProduct.product.image && singleProduct.product.image.length > 1 && (
                 <div className="product-content__images__second">
-                  {singleProduct.product.product.image.slice(1).map((imageUrl, index) => (
+                  {singleProduct.product.image.slice(1).map((imageUrl, index) => (
                     <div className="product-content__image">
                       <img key={index} src={imageUrl} alt={`Additional Image ${index + 1}`} />
                     </div>
@@ -125,14 +125,14 @@ const FullProduct = () => {
             </div>
 
             <div className="product-content__info">
-              <p className="product-content__info-name">{singleProduct.product.product.name}</p>
+              <p className="product-content__info-name">{singleProduct.product.name}</p>
               <div className="product-content__info-description">
-                <p className="info-description">{singleProduct.product.product.description}</p>
-                <p className="info-description__additional">{singleProduct.product.product.additionallDescription}</p>
+                <p className="info-description">{singleProduct.product.description}</p>
+                <p className="info-description__additional">{singleProduct.product.additionallDescription}</p>
               </div>
               <div className="product-content__info-colors">
                 <p>Colors:</p>
-                {Object.entries(singleProduct.product.product.colors).map(([colorName, hexValue]) => (
+                {Object.entries(singleProduct.product.colors).map(([colorName, hexValue]) => (
                   <span key={colorName} style={{ backgroundColor: hexValue, outline: selectedColor === colorName ? "1px solid #A1A1A1" : "none" }} onClick={() => handleColorClick(colorName, hexValue)}></span>
                 ))}
               </div>
@@ -144,7 +144,7 @@ const FullProduct = () => {
                   </p>
                 </div>
                 <div className="info-sizes__bottom">
-                  {singleProduct.product.product.sizes.map((sizeInfo) => (
+                  {singleProduct.product.sizes.map((sizeInfo) => (
                     <button key={sizeInfo.size} disabled={!sizeInfo.isAvailable} onClick={() => handleSizeClick(sizeInfo.size)} className={selectedSize === sizeInfo.size ? "active" : ""}>
                       {sizeInfo.size}
                     </button>
@@ -152,8 +152,8 @@ const FullProduct = () => {
                 </div>
               </div>
               <div className="product-content__info-prices">
-                {singleProduct.product.product.oldPrice && <p className="info-colors__prices-old">{singleProduct.product.product.oldPrice}$</p>}
-                {singleProduct.product.product.price && <p className="info-colors__prices-current">{singleProduct.product.product.price}$</p>}
+                {singleProduct.product.oldPrice && <p className="info-colors__prices-old">{singleProduct.product.oldPrice}$</p>}
+                {singleProduct.product.price && <p className="info-colors__prices-current">{singleProduct.product.price}$</p>}
               </div>
               <button className="product-content__button" onClick={handleAddToCart} disabled={!selectedSize || !selectedColor}>
                 <span>Add to cart</span>
@@ -184,14 +184,14 @@ const FullProduct = () => {
                 <div className="tabs-content">
                   {activeTab === "tabs-item__description" && (
                     <div>
-                      <p className="tabs-content__description">{singleProduct.product.product.description}</p>
-                      <p className="tabs-content__description additional">{singleProduct.product.product.additionallDescription}</p>
+                      <p className="tabs-content__description">{singleProduct.product.pdescription}</p>
+                      <p className="tabs-content__description additional">{singleProduct.product.additionallDescription}</p>
                     </div>
                   )}
                   {activeTab === "tabs-item__features" && (
                     <div>
                       <ul className="tabs-content__features">
-                        {singleProduct.product.product.features.map((feature, index) => (
+                        {singleProduct.product.features.map((feature, index) => (
                           <li key={index}>
                             <span>—</span>
                             {feature}
