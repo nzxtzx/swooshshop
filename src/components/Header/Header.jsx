@@ -81,16 +81,16 @@ const Header = () => {
               <NavLink to="catalog" className="header-navigation_link">
                 Catalog
               </NavLink>
-              <NavLink to="catalog" className="header-navigation_link">
+              <NavLink to="catalog/gender/male" className="header-navigation_link">
                 Male
               </NavLink>
-              <NavLink to="catalog" className="header-navigation_link">
+              <NavLink to="catalog/gender/female" className="header-navigation_link">
                 Female
               </NavLink>
-              <NavLink to="catalog" className="header-navigation_link">
+              <NavLink to="catalog/childs" className="header-navigation_link">
                 Childs
               </NavLink>
-              <NavLink to="catalog" className="header-navigation_link">
+              <NavLink to="catalog/discount/discounted" className="header-navigation_link">
                 Sellout
               </NavLink>
             </nav>

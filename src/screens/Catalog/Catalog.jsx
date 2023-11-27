@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import CatalogFilter from "./CatalogFilter/CatalogFilter";
 import { useDispatch, useSelector } from "react-redux";
-import { selectFilters, setPage } from "../../redux/slices/products-filters";
+import { selectFilters, setFilter, setPage } from "../../redux/slices/products-filters";
 import { fetchFilteredProducts } from "../../redux/slices/products.slice";
 import CatalogOptions from "./CatalogFilter/CatalogOptions";
 import Product from "../../components/Product/Product";
 import ProductSkeleton from "../../components/Product/ProductSkeleton";
 import CatalogPagination from "../../screens/Catalog/CataloPagination/CatalogPagination";
+import { useParams } from "react-router-dom";
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,29 @@ const Catalog = () => {
   const { allProducts } = useSelector((state) => state.homeProducts);
   const { filteredProducts } = useSelector((state) => state.homeProducts);
   const filters = useSelector(selectFilters);
+  const { gender } = useParams();
+  const { discount } = useParams();
+  const { childs } = useParams();
+  const isDiscount = discount === 'discounted';
+
+  useEffect(() => {
+    if (gender) {
+      dispatch(setFilter({ filterType: "gender", filterValue: gender }));
+    }
+  }, [gender, dispatch]);
+
+  useEffect(() => {
+    if (discount) {
+      dispatch(setFilter({ filterType: "discount", filterValue: isDiscount }));
+    }
+  }, [discount, dispatch]); 
+
+  useEffect(() => {
+    if (childs) {
+      dispatch(setFilter({ filterType: "childs", filterValue: childs}));
+    }
+  }, [childs, dispatch]);
+  
 
   useEffect(() => {
     dispatch(

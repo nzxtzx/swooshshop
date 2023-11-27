@@ -1,14 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import PropTypes from "prop-types";
-import {
-  BrowserRouter,
-  Outlet,
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { BrowserRouter, Outlet, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.scss";
 
@@ -38,10 +31,14 @@ const router = createBrowserRouter(
       <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<RegisterPage />} />
       <Route index element={<HomePage />} />
-      <Route path="catalog" element={<CatalogPage />} />
-      <Route path="cart" element={<CartPage/>}/>
-      <Route path="search" element={<SearchPage/>}/>
-      <Route path="favorites" element={<FavouritesPage/>}/>
+      <Route path="catalog/*" element={<CatalogPage />}>
+        <Route path="gender/:gender?" element={<CatalogPage />} />
+        <Route path="discount/:discount?" element={<CatalogPage />} />
+        <Route path=":childs?" element={<CatalogPage />} />
+      </Route>
+      <Route path="cart" element={<CartPage />} />
+      <Route path="search" element={<SearchPage />} />
+      <Route path="favorites" element={<FavouritesPage />} />
       <Route path="profile/*" element={<ProfilePage />}>
         <Route path="account" element={<MyAccount />} />
         <Route path="edit" element={<EditProfile />} />
@@ -54,7 +51,7 @@ const router = createBrowserRouter(
       <Route path="products/*">
         <Route path="product/:id" element={<FullProduct />} />
       </Route>
-      <Route path="/*" element={<NotFoundPage/>}/>
+      <Route path="/*" element={<NotFoundPage />} />
     </Route>
   )
 );

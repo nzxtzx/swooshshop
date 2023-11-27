@@ -5,12 +5,14 @@ const filtersSlice = createSlice({
   initialState: {
     size: "",
     color: "",
-    sort: "",
+    sort: "asc",
     gender: "",
     priceMin: "",
     priceMax: "",
     pageNumber: "",
     pageSize: "6",
+    discount: false,
+    childs: false,
   },
 
   reducers: {
@@ -28,12 +30,14 @@ const filtersSlice = createSlice({
       return {
         size: "",
         color: "",
-        sort: "",
+        sort: "asc",
         gender: "",
         priceMin: "",
         priceMax: "",
         pageNumber: "",
         pageSize: "6",
+        discount: false,
+        childs: false,
       }
     }
   },
